@@ -21,11 +21,17 @@ echo -e "${NC}You selected: $choix"
 if [ "$choix" == "1" ]; then
     echo -e "${GREEN}Installing panel...${NC}"
     ./panel.sh
+    ./final.sh
 elif [ "$choix" == "2" ]; then
     echo -e "${GREEN}Installing wings...${NC}"
+    ./wings.sh
 elif [ "$choix" == "3" ]; then
     echo -e "${GREEN}Installing panel & wings...${NC}"
     ./panel.sh
+    ./wings.sh
+    ./final.sh
+
 else
     echo -e "${RED}Invalid option. Please select 1, 2, or 3.${NC}"
+    exit
 fi
